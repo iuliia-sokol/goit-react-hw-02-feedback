@@ -25,4 +25,8 @@ export const StatItem = styled.p`
   padding: 6px 12px;
   border-radius: 12px;
   box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+
+  & > svg {
+    margin-right: 24px;
+  }
 `;

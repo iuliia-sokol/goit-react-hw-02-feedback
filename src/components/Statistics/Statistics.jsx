@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import { BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown } from 'react-icons/bs';
+import { AiOutlinePercentage } from 'react-icons/ai';
+import { TbFileLike } from 'react-icons/tb';
 import { StatWrapper, StatItem } from './Statistics.styled';
 import { NotificationMessage } from '../NotificationMessage/NotificationMessage';
 
@@ -12,11 +15,29 @@ export const Statistics = ({
   return (
     <StatWrapper>
       <NotificationMessage text="There is no feedback"></NotificationMessage>
-      <StatItem>{good}</StatItem>
-      <StatItem>{bad}</StatItem>
-      <StatItem>{neutral}</StatItem>
-      <StatItem>{total}</StatItem>
-      <StatItem>{positivePercentage}</StatItem>
+
+      <StatItem>
+        <BsEmojiHeartEyes></BsEmojiHeartEyes>
+        {good}
+      </StatItem>
+
+      <StatItem>
+        <BsEmojiNeutral></BsEmojiNeutral>
+        {neutral}
+      </StatItem>
+
+      <StatItem>
+        <BsEmojiFrown></BsEmojiFrown>
+        {bad}
+      </StatItem>
+      <StatItem>
+        <TbFileLike></TbFileLike>
+        {total}
+      </StatItem>
+      <StatItem>
+        <AiOutlinePercentage></AiOutlinePercentage>
+        {positivePercentage}
+      </StatItem>
     </StatWrapper>
   );
 };
