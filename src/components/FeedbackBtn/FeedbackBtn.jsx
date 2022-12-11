@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import { Btn } from './Feedbackbtn.styled';
 
-export const Feedbackbtn = ({ text, status }) => {
-  return <Btn status={status}>{text}</Btn>;
+export const Feedbackbtn = ({ text, status, type = 'button' }) => {
+  return (
+    <Btn type={type} status={status}>
+      {text}
+    </Btn>
+  );
 };
 
 Feedbackbtn.propTypes = {
