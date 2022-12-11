@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   BsEmojiHeartEyesFill,
   BsEmojiNeutralFill,
@@ -30,4 +32,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       ></Feedbackbtn>
     </BtnWrapper>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onLeaveFeedback: PropTypes.arrayOf(PropTypes.func.isRequired).isRequired,
 };

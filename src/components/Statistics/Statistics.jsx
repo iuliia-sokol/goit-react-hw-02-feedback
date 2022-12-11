@@ -12,33 +12,36 @@ export const Statistics = ({
   total = 0,
   positivePercentage = 0,
 }) => {
+  if (good || neutral || bad) {
+    return (
+      <StatWrapper>
+        <StatItem>
+          <BsEmojiHeartEyes></BsEmojiHeartEyes>
+          {good}
+        </StatItem>
+
+        <StatItem>
+          <BsEmojiNeutral></BsEmojiNeutral>
+          {neutral}
+        </StatItem>
+
+        <StatItem>
+          <BsEmojiFrown></BsEmojiFrown>
+          {bad}
+        </StatItem>
+        <StatItem>
+          <TbFileLike></TbFileLike>
+          {total}
+        </StatItem>
+        <StatItem>
+          <AiOutlinePercentage></AiOutlinePercentage>
+          {positivePercentage}
+        </StatItem>
+      </StatWrapper>
+    );
+  }
   return (
-    <StatWrapper>
-      <NotificationMessage text="There is no feedback"></NotificationMessage>
-
-      <StatItem>
-        <BsEmojiHeartEyes></BsEmojiHeartEyes>
-        {good}
-      </StatItem>
-
-      <StatItem>
-        <BsEmojiNeutral></BsEmojiNeutral>
-        {neutral}
-      </StatItem>
-
-      <StatItem>
-        <BsEmojiFrown></BsEmojiFrown>
-        {bad}
-      </StatItem>
-      <StatItem>
-        <TbFileLike></TbFileLike>
-        {total}
-      </StatItem>
-      <StatItem>
-        <AiOutlinePercentage></AiOutlinePercentage>
-        {positivePercentage}
-      </StatItem>
-    </StatWrapper>
+    <NotificationMessage text="There is no feedback"></NotificationMessage>
   );
 };
 
