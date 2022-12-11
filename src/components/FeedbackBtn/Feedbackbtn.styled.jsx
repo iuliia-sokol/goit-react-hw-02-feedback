@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const Btn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   font-size: 24px;
   font-weight: bold;
   border: none;
   background-color: transparent;
   box-shadow: 0px 12px 8px 4px #cab1b14d;
   transform: scale(1);
+  cursor: pointer;
   background-color: ${props =>
     props.status === 'good'
       ? 'rgba(0, 128, 75, 0.7)'
@@ -23,5 +27,9 @@ export const Btn = styled.button`
   }
   &:active {
     transform: scale(1.2);
+  }
+
+  & > svg {
+    margin-right: 8px;
   }
 `;

@@ -1,3 +1,9 @@
+import {
+  BsEmojiHeartEyesFill,
+  BsEmojiNeutralFill,
+  BsEmojiFrownFill,
+} from 'react-icons/bs';
+
 import { Container, BtnWrapper } from './App.styled';
 import { Header } from './Header/Header';
 import { Feedbackbtn } from './FeedbackBtn/FeedbackBtn';
@@ -8,9 +14,21 @@ export const App = () => {
     <Container>
       <Header text="Please leave feedback"></Header>
       <BtnWrapper>
-        <Feedbackbtn status="good" text="Good"></Feedbackbtn>
-        <Feedbackbtn status="neutral" text="Neutral"></Feedbackbtn>
-        <Feedbackbtn status="bad" text="Bad"></Feedbackbtn>
+        <Feedbackbtn
+          icon={BsEmojiHeartEyesFill}
+          status="good"
+          text="Good"
+        ></Feedbackbtn>
+        <Feedbackbtn
+          icon={BsEmojiNeutralFill}
+          status="neutral"
+          text="Neutral"
+        ></Feedbackbtn>
+        <Feedbackbtn
+          icon={BsEmojiFrownFill}
+          status="bad"
+          text="Bad"
+        ></Feedbackbtn>
       </BtnWrapper>
       <Header text="Statistics"></Header>
       <Statistics
