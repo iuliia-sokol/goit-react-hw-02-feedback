@@ -1,49 +1,71 @@
-import {
-  BsEmojiHeartEyesFill,
-  BsEmojiNeutralFill,
-  BsEmojiFrownFill,
-} from 'react-icons/bs';
+import React from 'react';
 
-import { Container, BtnWrapper } from './App.styled';
-import { Header } from './Header/Header';
-import { Feedbackbtn } from './FeedbackBtn/FeedbackBtn';
+import { Container } from './App.styled';
+import { Section } from './Section/Section';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 
-export const App = () => {
-  return (
-    <Container>
-      <Header text="Please leave feedback"></Header>
-      <BtnWrapper>
-        <Feedbackbtn
-          icon={BsEmojiHeartEyesFill}
-          status="good"
-          text="Good"
-        ></Feedbackbtn>
-        <Feedbackbtn
-          icon={BsEmojiNeutralFill}
-          status="neutral"
-          text="Neutral"
-        ></Feedbackbtn>
-        <Feedbackbtn
-          icon={BsEmojiFrownFill}
-          status="bad"
-          text="Bad"
-        ></Feedbackbtn>
-      </BtnWrapper>
-      <Header text="Statistics"></Header>
-      <Statistics
-        good="0"
-        neutral="0"
-        bad="0"
-        total="0"
-        positivePercentage="0"
-      />
-    </Container>
-  );
-};
+export class App extends React.Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
-// state = {
-//   good: 0,
-//   neutral: 0,
-//   bad: 0,
-// };
+  onGoodBtnClick = () => {
+    this.setState(prevState => ({
+      good: prevState.good + 1,
+    }));
+  };
+
+  onNeutralBtnClick = () => {
+    this.setState(prevState => ({
+      neutral: prevState.neutral + 1,
+    }));
+  };
+
+  onBadBtnClick = () => {
+    this.setState(prevState => ({
+      bad: prevState.bad + 1,
+    }));
+  };
+
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback();
+    if (!total) {
+      return 0;
+    }
+    const percent = (this.state.good * 100) / total;
+    return Math.round(percent);
+  };
+
+  render() {
+    return (
+      <Container>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={[
+              this.onGoodBtnClick,
+              this.onNeutralBtnClick,
+              this.onBadBtnClick,
+            ]}
+          ></FeedbackOptions>
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
+      </Container>
+    );
+  }
+}

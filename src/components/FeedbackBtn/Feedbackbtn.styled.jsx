@@ -8,6 +8,7 @@ export const Btn = styled.button`
   padding: 12px 16px;
   font-size: 24px;
   font-weight: bold;
+  text-transform: capitalize;
   border: none;
   background-color: transparent;
   box-shadow: 0px 12px 8px 4px #cab1b14d;

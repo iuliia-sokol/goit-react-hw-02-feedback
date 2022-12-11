@@ -4,11 +4,13 @@ import { Btn } from './Feedbackbtn.styled';
 export const Feedbackbtn = ({
   text,
   status,
-  // disabled = false,
-  icon: Icon,
+  disabled = false,
+  icon: Icon = null,
+
+  onClick,
 }) => {
   return (
-    <Btn status={status} type="button">
+    <Btn status={status} type="button" disabled={disabled} onClick={onClick}>
       {Icon && <Icon></Icon>}
       {text}
     </Btn>

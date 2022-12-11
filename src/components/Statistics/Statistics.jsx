@@ -6,11 +6,11 @@ import { StatWrapper, StatItem } from './Statistics.styled';
 import { NotificationMessage } from '../NotificationMessage/NotificationMessage';
 
 export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
+  good = 0,
+  neutral = 0,
+  bad = 0,
+  total = 0,
+  positivePercentage = 0,
 }) => {
   return (
     <StatWrapper>
@@ -43,9 +43,9 @@ export const Statistics = ({
 };
 
 Statistics.propTypes = {
-  good: PropTypes.string.isRequired,
-  neutral: PropTypes.string.isRequired,
-  bad: PropTypes.string.isRequired,
-  total: PropTypes.string.isRequired,
-  positivePercentage: PropTypes.string.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
