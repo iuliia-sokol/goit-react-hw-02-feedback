@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { StatWrapper, StatItem } from './Statistics.styled';
+import { NotificationMessage } from '../NotificationMessage/NotificationMessage';
 
 export const Statistics = ({
   good,
@@ -10,6 +11,7 @@ export const Statistics = ({
 }) => {
   return (
     <StatWrapper>
+      <NotificationMessage text="There is no feedback"></NotificationMessage>
       <StatItem>{good}</StatItem>
       <StatItem>{bad}</StatItem>
       <StatItem>{neutral}</StatItem>
