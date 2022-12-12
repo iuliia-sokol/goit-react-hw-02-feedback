@@ -11,7 +11,7 @@ export const Feedbackbtn = ({
 }) => {
   return (
     <Btn status={status} type="button" disabled={disabled} onClick={onClick}>
-      {Icon && <Icon></Icon>}
+      {Icon && <Icon />}
       {text}
     </Btn>
   );

@@ -16,33 +16,29 @@ export const Statistics = ({
     return (
       <StatWrapper>
         <StatItem>
-          <BsEmojiHeartEyes></BsEmojiHeartEyes>
+          <BsEmojiHeartEyes />
           {good}
         </StatItem>
-
         <StatItem>
-          <BsEmojiNeutral></BsEmojiNeutral>
+          <BsEmojiNeutral />
           {neutral}
         </StatItem>
-
         <StatItem>
-          <BsEmojiFrown></BsEmojiFrown>
+          <BsEmojiFrown />
           {bad}
         </StatItem>
         <StatItem>
-          <TbFileLike></TbFileLike>
+          <TbFileLike />
           {total}
         </StatItem>
         <StatItem>
-          <AiOutlinePercentage></AiOutlinePercentage>
+          <AiOutlinePercentage />
           {positivePercentage}
         </StatItem>
       </StatWrapper>
     );
   } else {
-    return (
-      <NotificationMessage text="There is no feedback"></NotificationMessage>
-    );
+    return <NotificationMessage text="There is no feedback" />;
   }
 };
 
