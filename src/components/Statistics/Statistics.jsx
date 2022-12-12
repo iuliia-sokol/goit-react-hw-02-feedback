@@ -39,10 +39,11 @@ export const Statistics = ({
         </StatItem>
       </StatWrapper>
     );
+  } else {
+    return (
+      <NotificationMessage text="There is no feedback"></NotificationMessage>
+    );
   }
-  return (
-    <NotificationMessage text="There is no feedback"></NotificationMessage>
-  );
 };
 
 Statistics.propTypes = {
