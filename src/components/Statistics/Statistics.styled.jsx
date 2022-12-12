@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StatWrapper = styled.div`
+export const StatWrapper = styled.ul`
   width: 30vw;
   min-height: 30vh;
   display: flex;
@@ -10,12 +10,14 @@ export const StatWrapper = styled.div`
   gap: 16px;
   padding: 32px;
   border-radius: 12px;
+  list-stile: none;
+  margin: 0;
   background-color: hsla(215, 98%, 79%, 0.2);
   border: 2px solid blanchedalmond;
   box-shadow: 10px 12px 12px 0px #cab1b14d;
 `;
 
-export const StatItem = styled.p`
+export const StatItem = styled.li`
   margin: 0;
   width: 100%;
   min-height: 40px;
