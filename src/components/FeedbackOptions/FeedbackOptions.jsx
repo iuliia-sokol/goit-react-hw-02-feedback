@@ -9,16 +9,18 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <BtnWrapper>
       {options.map(option => {
         return (
-          <Feedbackbtn
-            key={option}
-            icon={icons[option]}
-            type="button"
-            status={option}
-            text={option}
-            onClick={() => onLeaveFeedback(option)}
-          >
-            {option}
-          </Feedbackbtn>
+          <li>
+            <Feedbackbtn
+              key={option}
+              icon={icons[option]}
+              type="button"
+              status={option}
+              text={option}
+              onClick={() => onLeaveFeedback(option)}
+            >
+              {option}
+            </Feedbackbtn>
+          </li>
         );
       })}
     </BtnWrapper>
