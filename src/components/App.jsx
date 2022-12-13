@@ -12,22 +12,8 @@ export class App extends React.Component {
     bad: 0,
   };
 
-  onGoodBtnClick = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-
-  onNeutralBtnClick = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  onBadBtnClick = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
+  onLeaveFeedback = event => {
+    this.setState({ [event]: this.state[event] + 1 });
   };
 
   countTotalFeedback = () => {
@@ -48,12 +34,8 @@ export class App extends React.Component {
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={[
-              this.onGoodBtnClick,
-              this.onNeutralBtnClick,
-              this.onBadBtnClick,
-            ]}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.onLeaveFeedback}
           ></FeedbackOptions>
         </Section>
         <Section title="Statistics">

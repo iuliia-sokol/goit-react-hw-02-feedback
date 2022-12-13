@@ -6,9 +6,9 @@ import { StatWrapper, StatItem } from './Statistics.styled';
 import { NotificationMessage } from '../NotificationMessage/NotificationMessage';
 
 export const Statistics = ({
-  good = 0,
-  neutral = 0,
-  bad = 0,
+  good,
+  neutral,
+  bad,
   total = 0,
   positivePercentage = 0,
 }) => {
